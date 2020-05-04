@@ -34,8 +34,7 @@ def readHomepage(HP) : #긁어온 양식을 조금 수정해서 http만 남도�
     except:
         return HP
 
-max_overview = 0
-new_txt = open('data', 'w', -1, "utf-8")
+new_txt = open('data2', 'w', -1, "utf-8")
 
 while(i < 442) :
     addr1 = None; areacode = None; contentid = None; contenttypeid = None; dongcode = None; firstimage = None;
@@ -49,7 +48,7 @@ while(i < 442) :
         break
     new_txt.write(str(i)+'\n')
     addr1 = readUntilOr(addr1)
-    # print("addr1 :", addr1)
+    print("addr1 :", addr1)
     #count_OR = count_OR + 1
 
     areacode = readUntilOr(areacode)
@@ -58,7 +57,7 @@ while(i < 442) :
 
     contentid = readUntilOr(contentid)
     print("contentid: ", contentid)
-    new_txt.write(str(contentid)+'\n')
+    # new_txt.write(str(contentid)+'\n')
     #count_OR = count_OR + 1
 
     contenttypeid = readUntilOr(contenttypeid)
@@ -70,8 +69,8 @@ while(i < 442) :
     #count_OR = count_OR + 1
 
     firstimage = readUntilOr(firstimage)
-    print("firstImage: ", firstimage)
-    new_txt.write(str(firstimage)+'\n')
+    # print("firstImage: ", firstimage)
+    # new_txt.write(str(firstimage)+'\n')
     #count_OR = count_OR + 1
 
     homepage = readUntilOr(homepage)
@@ -87,8 +86,8 @@ while(i < 442) :
     if(overview=='') :
         overview = "None overview"
 
-    print("overview: ", overview)
-    new_txt.write(str(overview)+'\n')
+    # print("overview: ", overview)
+    # new_txt.write(str(overview)+'\n')
 
     #count_OR = count_OR + 1
 
@@ -97,11 +96,11 @@ while(i < 442) :
     #count_OR = count_OR + 1
 
     tel = readUntilOr(tel)
-    #print("tel: ", tel)
+    print("tel: ", tel)
     #count_OR = count_OR + 1
 
     title = readUntilOr(title)
-    # print("title: ", title)
+    print("title: ", title)
     #count_OR = count_OR + 1
 
     zipcode = readUntilOr(zipcode)
@@ -119,11 +118,16 @@ while(i < 442) :
     cat3 = readUntilOr(cat3)
     # print("cat3: ", cat3)
     print()
-    new_txt.write('\n')
+
     r.read(1)   #줄바꿈문자
+
+    new_txt.write(str(contentid) + "\n")
+    new_txt.write(str(title) + "\n")
+    new_txt.write(str(addr1) + "\n")
+    new_txt.write(str(tel) + "\n")
+    new_txt.write('\n')
 
     if(areacode == "No areacode"):      # 아니무슨 areacode가 없는 놈들이있냐
         areacode = -1
 
-print("max overview :", max_overview)
 new_txt.close()
