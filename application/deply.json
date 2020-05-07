@@ -1,0 +1,7 @@
+{
+  "REPO_URL": "https://github.com/khtks/chatbot_server",
+  "PROJECT_NAME": "chatbot_server",
+  "REMOTE_HOST": "travel_recommend.com",
+  "REMOTE_HOST_SSH": "192.168.0.3",
+  "REMOTE_USER": "khtks"
+}
