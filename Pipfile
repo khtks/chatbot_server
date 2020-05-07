@@ -30,6 +30,7 @@ arrow = "*"
 mysqlclient = "*"
 marshmallow-sqlalchemy = "*"
 pillow = "*"
+fabric3 = "*"
 
 [requires]
 python_version = "3.7.5"
