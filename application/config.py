@@ -19,6 +19,7 @@ class DevConfig(Config):
     ENV = 'development'
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql://root:z748159@localhost:3306/dev_db?charset=utf8'
+    HOST = '0.0.0.0'
 
 
 class TestConfig(Config):
