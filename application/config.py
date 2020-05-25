@@ -12,13 +12,13 @@ class ProdConfig(Config):
     ENV = 'production'
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = 'mysql://root:z748159@localhost:3306/prod_db?charset=utf8'
+    SERVER_NAME = 'travel_info.com'
 
 
 class DevConfig(Config):
     ENV = 'development'
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql://root:z748159@localhost:3306/dev_db?charset=utf8'
-    GOOGLE_OAUTH2_CLIENT_SECRETS_FILE = 'C:\\Users\\khtks\\PycharmProjects\\vacation_management\\application\\credentials.json'
 
 
 class TestConfig(Config):

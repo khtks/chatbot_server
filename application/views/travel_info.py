@@ -1,3 +1,4 @@
+import os
 import tempfile
 
 import requests
@@ -16,6 +17,8 @@ api = api(travel_info_bp)
 
 class Info(Resource):
     def get(self, contentID=None):
+        if contentID is None:
+            return make_response(render_template('display_result.html', title='no data', addr='no data', phone_number='no data', overview='no data', image='no data'), 200)
         result = TravelInfo.query.get(contentID)
 
         title = result.get_title()
@@ -41,7 +44,10 @@ class Info(Resource):
         overview = [x.lstrip() + '.' for x in overview.split('.')][:-1]
 
         print(result)
-        return make_response(render_template('display_result.html', title=title, addr=addr, phone_number=phone_number, overview=overview, image=image), 200)
+
+        path = os.path.join('static', 'photo')
+        full_filename = os.path.join(path, 'sample_image.png')
+        return make_response(render_template('display_result.html', title=title, addr=addr, phone_number=phone_number, overview=overview, image=full_filename), 200)
 
 
 api.add_resource(Info, '/<string:contentID>')
