@@ -25,7 +25,7 @@ def create_app(mode='prod'):
     from application.views.travel_info import travel_info_bp
     app.register_blueprint(travel_info_bp)
 
-    @app.route('/')
+    @app.route('/', host="travel_info.com:5000")
     def init():
         return "Hello World"
 
