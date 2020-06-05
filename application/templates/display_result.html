@@ -13,7 +13,9 @@
     <div id="name">&nbsp;{{ overview }}</div><br>
 
     &nbsp;&nbsp;<strong><span style="font-size: large;">Image</span></strong><br><br>
-    <img src="{{ image }}" alt="image">
+    {% set img = image %}
+
+    <img src={{img}}>
 
 </body>
 </html>
