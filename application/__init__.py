@@ -10,7 +10,6 @@ ma = Marshmallow()
 migrate = Migrate()
 api = Api
 
-
 def create_app(mode='prod'):
 
     app = Flask(__name__)

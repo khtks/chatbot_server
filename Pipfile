@@ -27,10 +27,11 @@ google = "*"
 oauth2client = "*"
 pyopenssl = "*"
 arrow = "*"
-mysqlclient = "*"
 marshmallow-sqlalchemy = "*"
 pillow = "*"
 fabric3 = "*"
+boto3 = "*"
+awscli = "*"
 
 [requires]
 python_version = "3.7.5"
